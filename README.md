@@ -1,5 +1,6 @@
 # Whatsapp
-Box do usuario
-Box de mensagem 
-Botão enviar
-Box central onde coloquei a imagem dentro
+Box do usuario habilitado para digitar,
+Box de mensagem habilitado para digitar,
+Botão enviar, 
+Box central, 
+Imagem dentro do Box central.
