@@ -5,39 +5,46 @@ import './App.css'
 
 const ContainerWhats = styled.div`
   background-color: white;
-  color: black;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  /* flex-direction: column; */
+  width: 35vw;
+  height: auto;
+  margin: 20px auto;
   border: solid 1px #7e7e7e;
   position: relative;
-  max-width: 600px;
-  height: 100vw;
-  height: 623px;
-  margin-left: calc(50% - 300px);
+
+  
+
+ 
 `;
 
 const BoxContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: -22px;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-`;
+   
+  .sendButton {
+    width: 20%;
+    padding: 0;
+    height:20px;
+  }
+  `;
 
 const Input1 = styled.input`
   width: 22%;
+  padding:5px;
+
 `;
 const Input2 = styled.input`
-  width: 88%;
+  width: 68%;
+  padding: 5px;
+
 `;
 
 const Img = styled.img`
- width: 100%;
- height: 45vw;
+  width:100%;
+  height:45vw;
 `;
 
 class ContainerWhatsUser extends React.Component {
@@ -75,7 +82,7 @@ class ContainerWhatsUser extends React.Component {
               value={this.state.numero}
               onChange={this.onChangeNumero}
             />
-            <button onClick={this.onClickEnviar}>Enviar</button>
+            <button className="sendButton" onClick={this.onClickEnviar}>Enviar</button>
           </BoxContainer>
         </ContainerWhats>
       </div>
