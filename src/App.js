@@ -1,8 +1,8 @@
-/* eslint-disable react/jsx-no-undef */
-import React  from 'react';
-import './App.css';
-import './WhatUser.js'
-import styled from 'styled-components'
+// /* eslint-disable react/jsx-no-undef */
+// import React  from 'react';
+// import './App.css';
+// import './WhatUser.js'
+// import styled from 'styled-components'
 
 
 // const AppContainer = styled.div`
@@ -26,31 +26,31 @@ import styled from 'styled-components'
 //   font-weight: bold;
 // `
 
-class App extends React.Component {
-  constructor() {
-    super()
+// class App extends React.Component {
+//   constructor() {
+//     super()
 
-    this.state = {
-      messages: []
-    }
-  }
+//     this.state = {
+//       messages: []
+//     }
+//   }
 
-  addMessage = (message) => {
-    this.setState({ messages: [...this.state.messages, message] })
-  }
+//   addMessage = (message) => {
+//     this.setState({ messages: [...this.state.messages, message] })
+//   }
 
-  render() {
-    return (
-      <AppContainer>
-        <MessagesContainer>
-          {
-            this.state.messages.map((message, index) => <p key={index}><BoldText>{message.user}</BoldText>{': ' + message.text}</p>)
-          }
-        </MessagesContainer>
-        <MessageForm addMessage={this.addMessage} />
-      </AppContainer>
-    );
-  }
-}
+//   render() {
+//     return (
+//       <AppContainer>
+//         <MessagesContainer>
+//           {
+//             this.state.messages.map((message, index) => <p key={index}><BoldText>{message.user}</BoldText>{': ' + message.text}</p>)
+//           }
+//         </MessagesContainer>
+//         <MessageForm addMessage={this.addMessage} />
+//       </AppContainer>
+//     );
+//   }
+// }
 
-export default App;
+// export default App;

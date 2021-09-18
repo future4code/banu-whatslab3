@@ -36,8 +36,10 @@ const Input2 = styled.input`
 `;
 
 const Img = styled.img`
- width: 100%;
- height: 45vw;
+    min-width: 100%;
+    max-height: 97%;
+    margin-top: -17px;
+
 `;
 
 class ContainerWhatsUser extends React.Component {
