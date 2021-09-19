@@ -14,10 +14,7 @@ const ContainerWhats = styled.div`
   border: solid 1px #7e7e7e;
   position: relative;
 
-  
-
- 
-`;
+`
 
 const BoxContainer = styled.div`
   display: flex;
@@ -29,60 +26,80 @@ const BoxContainer = styled.div`
     padding: 0;
     height:20px;
   }
-  `;
+  `
 
 const Input1 = styled.input`
   width: 22%;
   padding:5px;
 
-`;
+`
 const Input2 = styled.input`
   width: 68%;
   padding: 5px;
 
-`;
+`
 
 const Img = styled.img`
   width:100%;
   height:45vw;
-`;
+`
+
+const MessagesContainer = styled.div`
+  flex-grow:1;
+  padding: 16px;
+  display: flex;
+  flex-direction: column-reverse;
+`
 
 class ContainerWhatsUser extends React.Component {
   state = {
-    usuario: '',
-    mensagem: ''
-  };
+    messages: [],
+    userValue : '',
+    messageValue : ''
+  }
 
-  onChangeUsuario = (event) => {
-    this.setState({ usuario: event.target.value });
-  };
 
-  onChangeMensagem = (event) => {
-    this.setState({ mensagem: event.target.value });
-  };
+  onChangeUserValue = (e) => {
+    this.setState({userValue: e.target.value})
+  }
 
-  onClickEnviar = () => {};
+  onChangeMessageValue = (e) => {
+    this.setState({messageValue: e.target.value})
+  }
+
+
+  sendMessage = () => {
+    const newMessage  ={
+       user: this.state.userValue ,
+       text: this.state.messageValue
+    }
+    const newMessagesArray = [newMessage,...this.state.messages]
+
+    this.setState({messages: newMessagesArray, messageValue: ''})
+  }
 
   render() {
-    console.log(this.state);
     return (
       <div>
         <ContainerWhats>
           <Img src="bg-chat-tile-light.png"/> 
-          <p>{this.state.nome}</p>
-          <p>{this.state.numero} </p>
+          <MessagesContainer>
+          {this.state.messages.map((message,index) => {
+            return <p key={index}> <strong>{message.user}</strong>: {message.text} </p>
+          })}
+          </MessagesContainer>
           <BoxContainer>
             <Input1
-              placeholder={"Usuário"}
-              value={this.state.nome}
-              onChange={this.onChangeNome}
+                onChange={this.onChangeUserValue} 
+                value={this.state.userValue} 
+                placeholder="Nome"
             />
             <Input2
-              placeholder={"Mensagem"}
-              value={this.state.numero}
-              onChange={this.onChangeNumero}
+              onChange={this.onChangeMessageValue} 
+              value={this.state.messageValue} 
+              placeholder="Mensagem"
             />
-            <button className="sendButton" onClick={this.onClickEnviar}>Enviar</button>
+            <button className="sendButton" onClick={this.sendMessage}>Enviar</button>
           </BoxContainer>
         </ContainerWhats>
       </div>
